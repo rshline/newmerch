@@ -1,3 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-navbar {
+        @apply cursor-pointer text-primary-blue rounded-full shadow-inner bg-gradient-to-b from-primary-violet to-white hover:bg-gradient-to-t active:drop-shadow-lg active:bg-blend-overlay;
+    }
+
+    .btn-navbar-logo {
+        @apply h-7 w-7;
+    }
+
+    .navbar-skew-line {
+        @apply h-full border-l border-solid border-neutral-400 skew-x-12 hidden md:block;
+    }
+}
