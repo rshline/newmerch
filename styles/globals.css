@@ -8,7 +8,7 @@
 
 @layer components {
     .btn-navbar {
-        @apply cursor-pointer text-primary-blue rounded-full shadow-inner bg-gradient-to-b from-primary-violet to-white hover:bg-gradient-to-t active:drop-shadow-lg active:bg-blend-overlay;
+        @apply cursor-pointer text-primary-blue rounded-full shadow-inner bg-gradient-to-b from-primary-violet to-white hover:bg-gradient-to-t active:drop-shadow-lg active:bg-blend-overlay transition-all duration-1000;
     }
 
     .btn-navbar-logo {
@@ -17,5 +17,9 @@
 
     .navbar-skew-line {
         @apply h-full border-l border-solid border-neutral-400 skew-x-12 hidden md:block;
+    }
+
+    .table-border {
+        @apply border border-neutral-300;
     }
 }

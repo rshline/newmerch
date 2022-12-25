@@ -1,6 +1,7 @@
-import { Navbar, Footer } from 'flowbite-react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Footer from '../../components/Footer'
+import Navbar from '../../components/Navbar'
 
 const Order: NextPage = () => {
   return (

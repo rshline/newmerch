@@ -1,14 +1,15 @@
+import Link from 'next/link'
 import React from 'react'
 
 function Footer() {
   return (
     <div className='flex flex-col justify-start align-bottom p-4 h-40 bg-primary-blue'>
-      <div>
+      <Link href="https://ador.world/">
         <img src="/ador_logo.png" />
-      </div>
-      <div>
+      </Link>
+      <Link href="https://weverseshop.io/en/shop/GL_USD/artists/82/categories/1134">
         <img src="/wvshop_logo.png" />
-      </div>
+      </Link>
     </div>
   )
 }

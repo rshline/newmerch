@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { productType } from '../utils/custom'
 
@@ -7,16 +7,17 @@ interface Iproducts {
   }  
 
 function ProductCard({ product }: Iproducts) {
+
   return (
-    <div className='w-60 border border-solid border-gray-700 mx-6 my-4 font-inter'>
+    <div className='w-1/3 md:w-1/5 border border-solid border-gray-700 mx-2 my-4 font-inter hover:shadow-lg'>
         <div className='bg-primary-yellow h-3 border-b border-solid border-gray-700'></div>
-        <div className='h-64 w-58 max-h-64 justify-center align-middle'>
+        <div className='justify-center align-middle'>
             <img 
                 className='h-full object-fill object-center'
                 src={product.img}
             />
         </div>
-        <div className='flex justify-between p-2 border-t border-solid border-gray-700'>
+        <div className='flex flex-col md:flex-row justify-between p-2 border-t border-solid border-gray-700 space-x-2'>
             <div className='col-span-2'>
                 <Link href={`/product/${product._id}`}>
                     <p>{product.name}</p>
@@ -24,7 +25,7 @@ function ProductCard({ product }: Iproducts) {
                 
             </div>
             <div className='col-span-1'>
-                <p>{product.prices}</p>
+                <p className='font-bold'>${product.prices}</p>
             </div>
         </div>
     </div>

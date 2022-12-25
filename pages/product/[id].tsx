@@ -1,13 +1,13 @@
 import axios from 'axios'
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import ProductDetail from '../../components/ProductDetail'
-import { getProductType } from '../../utils/custom'
+import { getProductType, productType } from '../../utils/custom'
 
 interface Iproducts {
-  product: getProductType
+  product: productType
 }
 
 const Product: NextPage<Iproducts> = ({ product }: Iproducts) => {
@@ -27,8 +27,8 @@ const Product: NextPage<Iproducts> = ({ product }: Iproducts) => {
 
 export default Product
 
-export const getServerSideProps = async ({params}) => {
-  const res = await axios.get(`http://localhost:3000/api/products/${params.id}`)
+export const getServerSideProps: GetServerSideProps = async ({params}) => {
+  const res = await axios.get(`http://localhost:3000/api/products/${params?.id}`)
   const productData: Iproducts = res.data
 
   return {

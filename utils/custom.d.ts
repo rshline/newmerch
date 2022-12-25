@@ -10,13 +10,22 @@ export interface ResponseFuncs {
 }
 
 export interface productType {
-    _id?: number
+    _id: number
     item: string
     name: string
     desc: string
     img: string
     prices: number
     category: string
+}
+
+export interface orderType {
+    _id: number
+    customer: string
+    address: string
+    total: number
+    method: number
+    status: number
 }
 
 export interface getProductType {
