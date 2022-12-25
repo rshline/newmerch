@@ -17,7 +17,7 @@ const Product: NextPage<Iproduct> = ({ products }: Iproduct ) => {
   const handleDelete = async (id: any) => {
     try {
       const res = await axios.delete(
-        "http://localhost:3000/api/products/" + id
+        `${process.env.HOST}/api/products/${id}`
       );
       setProductlist(productlist.filter((product) => product._id !== id));
     } catch (err) {
@@ -91,7 +91,7 @@ export const getServerSideProps = async (ctx: any) => {
     };
   }
 
-  const productRes = await axios.get("http://localhost:3000/api/products");
+  const productRes = await axios.get(`${process.env.HOST}/api/products`);
 
   return {
     props: {

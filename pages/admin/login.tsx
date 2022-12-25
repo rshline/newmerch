@@ -13,7 +13,7 @@ const Login: NextPage = () => {
 
   const handleClick = async () => {
     try {
-      await axios.post("http://localhost:3000/api/auth/adminlogin", {
+      await axios.post(`${process.env.HOST}/api/auth/adminlogin`, {
         username,
         password,
       });

@@ -28,7 +28,7 @@ const Product: NextPage<Iproducts> = ({ product }: Iproducts) => {
 export default Product
 
 export const getServerSideProps: GetServerSideProps = async ({params}) => {
-  const res = await axios.get(`http://localhost:3000/api/products/${params?.id}`)
+  const res = await axios.get(`${process.env.HOST}/api/products/${params?.id}`)
   const productData: Iproducts = res.data
 
   return {

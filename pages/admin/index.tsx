@@ -19,7 +19,7 @@ const Index: NextPage<Iorder> = ({ orders }: Iorder) => {
     const currentStatus = item.status;
 
     try {
-      const res = await axios.put("http://localhost:3000/api/orders/" + id, {
+      const res = await axios.put(`${process.env.HOST}/api/orders/${id}`, {
         status: currentStatus + 1,
       });
       setOrderlist([
@@ -91,7 +91,7 @@ export const getServerSideProps = async (ctx: any) => {
     };
   }
 
-  const orderRes = await axios.get("http://localhost:3000/api/orders");
+  const orderRes = await axios.get(`${process.env.HOST}/api/orders`);
 
   return {
     props: {
