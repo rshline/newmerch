@@ -44,6 +44,14 @@ export interface Iproducts {
     product: productType
 }  
 
+interface IAPIproduct {
+    products: getProductType
+}
+
 export interface Icart {
     cart: CartState
 }
+
+interface Iorders {
+    orders: Array<orderType>
+  }

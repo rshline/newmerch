@@ -4,13 +4,9 @@ import Head from 'next/head'
 import { useState } from 'react';
 import AdminNavbar from '../../components/AdminNavbar';
 import Footer from '../../components/Footer';
-import { getProductType } from '../../utils/custom';
+import { IAPIproduct } from '../../utils/custom';
 
-interface Iproduct {
-  products: getProductType
-}
-
-const Product: NextPage<Iproduct> = ({ products }: Iproduct ) => {
+const Product: NextPage<IAPIproduct> = ({ products }: IAPIproduct ) => {
   const [productlist, setProductlist] = useState(products.data);
   console.log(productlist)
 

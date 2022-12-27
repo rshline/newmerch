@@ -17,10 +17,10 @@ function ProductCard({ product }: Iproducts) {
                 src={product.img}
             />
         </div>
-        <div className='flex flex-col md:flex-row justify-between p-2 border-t border-solid border-gray-700 space-x-2'>
+        <div className='flex flex-col md:flex-row justify-between p-2 border-t border-solid border-gray-700 space-y-2 md:space-x-2'>
             <div className='col-span-2'>
                 <Link href={`/product/${product._id}`}>
-                    <p>{product.name}</p>
+                    <p className='hover:font-bold'>{product.name}</p>
                 </Link>
                 
             </div>

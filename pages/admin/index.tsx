@@ -4,13 +4,9 @@ import Head from 'next/head'
 import { useState } from 'react';
 import AdminNavbar from '../../components/AdminNavbar';
 import Footer from '../../components/Footer';
-import { orderType } from '../../utils/custom';
+import { Iorders } from '../../utils/custom';
 
-interface Iorder {
-  orders: Array<orderType>
-}
-
-const Index: NextPage<Iorder> = ({ orders }: Iorder) => {
+const Index: NextPage<Iorders> = ({ orders }: Iorders) => {
   const [orderlist, setOrderlist] = useState(orders);
   const status = ["Processed", "On the way", "Delivery"];
 

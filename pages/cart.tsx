@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import CartInfo from '../components/CartInfo'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import { CartState, Icart } from '../utils/custom'
+import { Icart } from '../utils/custom'
 
 const Cart: NextPage = () => {
 

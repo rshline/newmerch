@@ -4,11 +4,7 @@ import Head from 'next/head'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import ProductDetail from '../../components/ProductDetail'
-import { getProductType, productType } from '../../utils/custom'
-
-interface Iproducts {
-  product: productType
-}
+import { Iproducts } from '../../utils/custom'
 
 const Product: NextPage<Iproducts> = ({ product }: Iproducts) => {
   return (

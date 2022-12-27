@@ -4,16 +4,16 @@ import Marquee from 'react-fast-marquee'
 function NewArrival() {
   return (
     <div>
-        <Marquee speed={50} className='font-inter text-primary-violet font-bold text-5xl md:text-6xl lg:text-7xl'> NEW ARRIVAL </Marquee>
+        <Marquee speed={50} className='py-3 font-inter text-primary-violet font-bold text-4xl md:text-6xl lg:text-7xl overflow-y-hidden'> NEW ARRIVAL NEW ARRIVAL </Marquee>
 
         {/* special product */}
         <div className='flex justify-center bg-gradient-to-r from-primary-violet via-white to-primary-violet'>
           <div className='flex flex-col lg:flex-row p-4 mx-5 my-7 w-full lg:w-3/5 align-middle drop-shadow-lg bg-gradient-to-br rounded-lg from-custom-mint via-custom-blue to-custom-purple'>
-            <div className='font-philosopher space-y-3'>
-              <h1 className='text-xl lg:text-7xl text-custom-purple'>SEASON GREETING</h1>
+            <div className='flex flex-col justify-center font-philosopher space-y-3'>
+              <h1 className='text-xl text-center lg:text-left lg:text-7xl text-custom-purple'>SEASON GREETING</h1>
               <button className='px-3 py-1 rounded-full text-white bg-custom-peach hover:bg-opacity-70'>Add to Cart</button>
             </div>
-            <div className=''>
+            <div className='flex justify-center'>
               <img src='/sg2023.png' className='h-40 md:h-48 lg:h-54 object-contain' />
             </div>
           </div>

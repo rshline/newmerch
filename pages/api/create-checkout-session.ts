@@ -8,8 +8,8 @@ export default async (
     req: NextApiRequest,
     res: NextApiResponse
 ) => {
-  console.log('aqui aa key', process.env.STRIPE_SECRET_KEY)
   const { items, email } = req.body
+
   const transformItems = items.map((item: productType) => ({
     price_data: {
       currency: 'USD',

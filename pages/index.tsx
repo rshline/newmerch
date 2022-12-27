@@ -23,8 +23,8 @@ const Home: NextPage<Iproducts> = ( { productList }: Iproducts ) => {
       </Head>
       <Navbar />
       <Banner />
-      <NewArrival />
       <ProductList products={productList} />
+      <NewArrival />
       <Footer />   
     </div>
   )
