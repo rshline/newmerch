@@ -17,9 +17,9 @@ function ProductList({ products }: Iproducts) {
         </div>
 
         <div className='flex flex-wrap justify-center'>
-            {products.data.map( (product) => {
+            {products ? products.data.map( (product) => {
                 return <ProductCard key={product._id} product={product} />
-            })}
+            }) : []}
         </div>
     </div>
   )
