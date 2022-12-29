@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const OrderSchema = new mongoose.Schema({
-    customer: {
+    customer_email: {
       type: String,
       required: true,
       maxlength: 60,
@@ -15,13 +15,13 @@ const OrderSchema = new mongoose.Schema({
       type: Number,
       required: true,
     },
+    total_shipping: {
+      type: Number,
+      required: true,
+    },
     status: {
       type: Number,
       default: 0,
-    },
-    method: {
-      type: Number,
-      required:true
     },
 }, { timestamps: true });
 

@@ -2,7 +2,6 @@ import { loadStripe } from '@stripe/stripe-js'
 import axios from 'axios'
 import { signIn, useSession } from 'next-auth/react'
 import React from 'react'
-import api from '../utils/axios-config'
 import { Icart } from '../utils/custom'
 const stripePromise = loadStripe(process.env.strive_public_key!)
 
@@ -16,12 +15,18 @@ function CartInfo(cart: Icart) {
     const stripe = await stripePromise
 
     if(session && stripe!= null){
-      const checkoutSession = await api.post(`/create-checkout-session`, {
-        data: {
-          items: cartItems,
-          email: session.user.email,
-        },        
+      let checkoutData = JSON.stringify({
+        items: cartItems,
+        email: session.user.email, 
       })
+
+      const checkoutSession = await axios.post("/api/create-checkout-session",  checkoutData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
 
       const result = await stripe.redirectToCheckout({
         sessionId: checkoutSession.data.id
