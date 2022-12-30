@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { productType } from "../../utils/custom";
+import { cartItemType, productType } from "../../utils/custom";
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
@@ -9,7 +9,7 @@ export default async (
 ) => {
   const { items, email } = req.body
 
-  const transformItems = items.map((item: productType) => ({
+  const transformItems = items.map((item: cartItemType) => ({
     price_data: {
       currency: "USD",
       unit_amount: Math.round(item.prices * 100),
@@ -19,7 +19,7 @@ export default async (
           images: [item.img],
       },
     },
-    quantity: 1
+    quantity: item.subqty
   }));
 
   const session = await stripe.checkout.sessions.create({

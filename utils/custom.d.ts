@@ -11,12 +11,16 @@ export interface ResponseFuncs {
 
 export interface productType {
     _id: number
-    item: string
     name: string
     desc: string
     img: string
     prices: number
     category: string
+}
+
+export interface cartItemType extends productType {
+    subqty: number
+    subtotal: number
 }
 
 export interface orderType {
@@ -35,7 +39,7 @@ export interface getProductType {
 
 // Define a type for the slice state
 export interface CartState {
-    products: Array<productType>,
+    products: Array<cartItemType>,
     qty: number,
     total: number
 }
