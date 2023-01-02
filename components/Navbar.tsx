@@ -4,12 +4,14 @@ import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { CartState } from '../utils/custom';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 interface IRootState {
   cart: CartState;
 } 
 
 function Navbar() {
+  const router = useRouter()
 
   const {data: session} = useSession()
   const qty = useSelector((state: IRootState) => state.cart.qty)
@@ -46,7 +48,7 @@ function Navbar() {
       {/* Right - log in */}
       <div className='flex px-4 py-1 w-2/5 justify-end'>
         <button 
-          onClick={!session ? () => signIn() : () => signOut()}
+          onClick={!session ? () => router.push(`/auth/signin`) : () => signOut()}
           className='px-2 py-1 m-1 font-inter btn-navbar text-sm'>{!session ? "Log in" : "Log out"}</button>
       </div>
     </div>

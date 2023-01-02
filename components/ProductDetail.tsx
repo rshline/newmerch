@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addProduct } from '../app/cartSlice'
 import { Iproducts, productType } from '../utils/custom'
+import { toast, ToastContainer } from "react-toastify";
 
 function ProductDetail({ product }: Iproducts) {
   const subtotal = product.prices
@@ -13,6 +14,7 @@ function ProductDetail({ product }: Iproducts) {
   
   const handleClick = () => {
     dispatch(addProduct({...product, subtotal, subqty}))
+    toast('🛒 Products have been added to your cart!')
   }
 
   return (
