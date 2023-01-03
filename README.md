@@ -1,3 +1,46 @@
+# NewMerch Information 
+
+NewMerch is an online merchandise store of NewJeans (unofficial).
+
+UI designed by [@rchaelsa](https://www.instagram.com/rchaelsa/)
+
+## Tech Stack  
+* TypeScript
+* React, Next.js
+* MongoDB
+* NextAuth
+* Stripe
+
+## Features:
+- Landing page
+![home](/images/home.png)
+- Show Products
+![products](/images/products.png)
+![product](/images/product.png)
+- Add products to cart
+![toaster](/images/toaster.png)
+- Customize quantity of product in cart
+![cart](/images/cart.png)
+- Sign In
+![sign in](/images/cart.png)
+- Payment with Stripe
+![payment](/images/payment.png)
+- Success page
+![success](/images/success.png)
+
+## Future Development Plan:
+
+- Admin
+    - Confirm order
+    - Update order
+    - Add new product
+    - Edit product
+    - Delete Product
+- Show product by category
+- Search product
+
+---
+
 # Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
