@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ShoppingCartIcon, HeartIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { CartState } from '../utils/custom';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import Searchbar from './Searchbar';
 
 interface IRootState {
   cart: CartState;
@@ -15,8 +16,9 @@ function Navbar() {
 
   const {data: session} = useSession()
   const qty = useSelector((state: IRootState) => state.cart.qty)
+
   return (
-    <div className='flex w-screen max-w-full justify-between border border-neutral-300 bg-gradient-to-b from-white to-primary-violet'>
+    <div className='sticky top-0 z-50 flex w-screen max-w-full justify-between border border-neutral-300 bg-gradient-to-b from-white to-primary-violet'>
       
       {/* Left - cart - wishlist - search */}
       <div className='flex px-4 py-1 w-2/5 space-x-2'>
@@ -30,10 +32,7 @@ function Navbar() {
         <div className='btn-navbar btn-navbar-logo p-1 m-1'>
           <HeartIcon className='h-5' />
         </div>
-        <div className='hidden lg:flex m-1 rounded-full btn-navbar h-7'>
-          <MagnifyingGlassIcon className='m-1 h-5 rounded-l-full' />
-          <input type="text" name='search'  className='rounded-r-full bg-transparent border-transparent focus:border-transparent focus:ring-0 focus:drop-shadow-lg'/>
-        </div>
+        <Searchbar />
       </div>
 
       {/* Logo */}
@@ -56,3 +55,12 @@ function Navbar() {
 }
 
 export default Navbar
+
+// export async function getStaticProps(){
+//   const data = await axios.get('https://restcountries.com/v3.1/all')
+//   return {
+//   props: {
+//   countries: data.data
+//   }
+//   }
+//   }

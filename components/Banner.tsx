@@ -4,16 +4,16 @@ import { Carousel } from 'react-responsive-carousel';
 
 function Banner() {
   return (
-    <div>
-        <Carousel showArrows={false} showThumbs={false}>
+    <div className='-z-30'>
+        <Carousel showThumbs={false} showStatus={false} transitionTime={10} infiniteLoop={true} autoPlay={true} interval={50000}>
             <div>
-                <img src="/banner_1.jpeg" className='object-cover h-96' />
+                <img src="/banner_1.jpeg" className='object-cover h-52 md:h-72 lg:h-96' />
             </div>
             <div>
-                <img src="https://pbs.twimg.com/media/FYMylBpXgAA2_ff?format=jpg&name=4096x4096" className='object-cover h-96' />
+                <img src="/banner_2.jpeg" className='object-cover h-52 md:h-72 lg:h-96' />
             </div>
             <div>
-                <img src="https://pbs.twimg.com/media/FZEMB83agAAebSa?format=jpg&name=large" className='object-cover h-96' />
+                <img src="/banner_3.jpeg" className='object-cover h-52 md:h-72 lg:h-96' />
             </div>
         </Carousel>  
     </div>

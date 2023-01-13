@@ -27,6 +27,7 @@ UI designed by [@rchaelsa](https://www.instagram.com/rchaelsa/)
 ![payment](/images/payment.png)
 - Success page
 ![success](/images/success.png)
+- Search product
 
 ## Future Development Plan:
 
@@ -36,8 +37,7 @@ UI designed by [@rchaelsa](https://www.instagram.com/rchaelsa/)
     - Add new product
     - Edit product
     - Delete Product
-- Show product by category
-- Search product
+- Filter product by category
 
 ---
 

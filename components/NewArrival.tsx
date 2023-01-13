@@ -10,9 +10,10 @@ function NewArrival() {
         {/* special product */}
         <div className='flex justify-center bg-gradient-to-r from-primary-violet via-white to-primary-violet'>
           <div className='flex flex-col lg:flex-row p-4 mx-5 my-7 w-full lg:w-3/5 align-middle drop-shadow-lg bg-gradient-to-br rounded-lg from-custom-mint via-custom-blue to-custom-purple'>
-            <div className='flex flex-col justify-center font-philosopher space-y-3'>
+            <div className='flex flex-col justify-center items-center md:items-start font-philosopher space-y-3'>
               <h1 className='text-xl text-center lg:text-left lg:text-7xl text-custom-purple'>SEASON GREETING</h1>
-              <Link href={`/product/63ad74ccc74b6664822c4807`}>
+              {/* hardcode */}
+              <Link href={`/product/63ad74ccc74b6664822c4807`}> 
                 <button className='px-3 py-1 rounded-full text-white bg-custom-peach hover:bg-opacity-70'>See product</button>                
               </Link>
 
