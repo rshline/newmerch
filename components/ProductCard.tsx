@@ -9,7 +9,7 @@ interface Iproducts {
 function ProductCard({ product }: Iproducts) {
 
   return (
-    <div className='w-1/3 md:w-1/5 border border-solid border-gray-700 mx-2 my-4 font-inter hover:shadow-lg'>
+    <div className='w-1/3 md:w-44 lg:w-48 border border-solid border-gray-700 mx-2 my-4 font-inter hover:shadow-lg'>
         <div className='bg-primary-yellow h-3 border-b border-solid border-gray-700'></div>
         <div className='justify-center align-middle'>
             <img 
