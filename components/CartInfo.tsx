@@ -44,8 +44,8 @@ function CartInfo(cart: Icart) {
   }
 
   return (
-    <div className='mx-10 my-6 min-h-screen'>
-      <h1 className='text-3xl font-abeezee'>Your Cart</h1>
+    <div className='w-full my-8 min-h-screen'>
+      <h1 className='mx-4 lg:mx-10 text-3xl font-abeezee'>Your Cart</h1>
 
       {/* Empty */}
       <div className={`${cart.cart.qty!=0 && 'hidden'} my-7`}>
@@ -53,23 +53,22 @@ function CartInfo(cart: Icart) {
       </div>
 
       {/* Cart Items */}
-      <div className='flex flex-col flex-wrap w-screen my-4 space-y-3 font-abeezee'>
+      <div className='flex flex-col space-y-5 mx-4 lg:mx-10 my-10 font-abeezee'>
         {cartItems.map((product, i) => (
-          <div key={i} className='flex justify-between w-full'>
-            <div className='flex w-4/6 items-center space-x-5'>
-              {/* Image */}
-              <div className='space-y-3'>
-                <img src={product.img} className="h-16 lg:h-40 border border-solid border-primary-blue rounded" />  
-              </div> 
-              {/* Product info */}
-              <div className='flex flex-col'>
-                <h1 className='text-md lg:text-2xl'>{product.name}</h1>
-                <p className='text-sm lg:text-lg'>${product.prices}</p>                     
-              </div>              
-            </div>    
-            <div className='flex flex-col lg:flex-row w-1/6 items-center lg:space-x-5'>
+          <div key={i} className='grid grid-cols-5 lg:grid-cols-9 gap-2'>
+            {/* image */}
+            <div className='lg:col-span-2'>
+              <img src={product.img} className="h-16 lg:h-40 border border-solid border-primary-blue rounded" />  
+            </div>              
+            {/* Product info */}
+            <div className='flex flex-col col-span-2 lg:col-span-4 place-content-center'>
+              <h1 className='text-sm lg:text-2xl'>{product.name}</h1>
+              <p className='text-sm lg:text-lg'>${product.prices}</p>                     
+            </div>               
+            {/* Qty and price */}
+            <div className='lg:col-span-2 grid grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 gap-1'>
               {/* Quantity */}
-              <div className='flex'>
+              <div className='flex items-center lg:place-self-center'>
                 <button
                   disabled={product.subqty==0}
                   onClick={() =>  dispatch(decQty({...product}))}
@@ -89,23 +88,25 @@ function CartInfo(cart: Icart) {
                 </button>                           
               </div>
               {/* Subtotal */}
-              <p className='flex text-sm lg:text-lg'>${product.subtotal.toFixed(2)}</p>
+              <p className='flex text-sm lg:text-lg lg:place-self-center'>${product.subtotal.toFixed(2)}</p>
             </div>    
             {/* Delete */}
-            <div className='flex w-1/6 mx-3 items-center cursor-pointer'>
-              <XMarkIcon onClick={() => dispatch(removeProduct({...product}))} className='h-5' />
+            <div className='flex place-content-end'>
+              <XMarkIcon onClick={() => dispatch(removeProduct({...product}))} className='h-5 place-self-center cursor-pointer' />
             </div>
           </div>
         ))}          
       </div>
-      <div className='flex justify-between m-4'>
+
+      {/* Total */}
+      <div className='flex justify-between mx-4 lg:mx-10'>
         <p className='font-bold'>{cart.cart.qty} item(s)</p>
         <p className='font-bold'>Total: ${cart.cart.total.toFixed(2)}</p>
       </div>
 
       {/* Button */}
-      <div className='flex justify-end w-full my-4'>
-          <div className={`${session && 'hidden'} mx-1`}>
+      <div className='flex justify-end my-4 mx-4 lg:mx-10'>
+          <div className={`${session && 'hidden'}`}>
             <button onClick={() => signIn()} className={`px-2 py-1 cursor-pointer bg-primary-blue text-white rounded active:drop-shadow-lg active:bg-blend-overlay ${session && 'hidden'}`}>                
               Sign In to Checkout
             </button>            

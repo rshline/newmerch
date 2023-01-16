@@ -28,16 +28,12 @@ UI designed by [@rchaelsa](https://www.instagram.com/rchaelsa/)
 - Success page
 ![success](/images/success.png)
 - Search product
+- Filter product by category
+- Sort Product
 
 ## Future Development Plan:
 
-- Admin
-    - Confirm order
-    - Update order
-    - Add new product
-    - Edit product
-    - Delete Product
-- Filter product by category
+- Admin Dashboard
 
 ---
 

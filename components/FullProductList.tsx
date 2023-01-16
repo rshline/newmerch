@@ -10,7 +10,7 @@ function FullProductList({ products }: Iproducts) {
 
   return (
     <div className="lg:my-4">
-        <div className='flex flex-wrap justify-around'>
+        <div className='flex flex-wrap justify-evenly lg:justify-between'>
             {products ? products.map( product => {
                 return <ProductCard key={product._id} product={product} />
             }) : []}
