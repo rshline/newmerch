@@ -1,12 +1,13 @@
 # NewMerch Information 
 
-NewMerch is an online merchandise store of NewJeans (unofficial).
+NewMerch is a merchandise store that specializes in selling albums, clothing, accessories, and other items related to NewJeans.
 
 UI designed by [@rchaelsa](https://www.instagram.com/rchaelsa/)
 
 ## Tech Stack  
 * TypeScript
 * React, Next.js
+* Redux Toolkit
 * MongoDB
 * NextAuth
 * Stripe
